@@ -19,10 +19,10 @@ from __future__ import division
 from __future__ import print_function
 
 import math
-import random
 
 import numpy as np
 import tensorflow as tf
+import secrets
 
 
 class Seq2SeqTest(tf.test.TestCase):
@@ -445,7 +445,7 @@ class Seq2SeqTest(tf.test.TestCase):
     buckets = [(4, 4), (8, 8)]
     perplexities = [[], []]  # Results for each bucket.
     tf.set_random_seed(111)
-    random.seed(111)
+    secrets.SystemRandom().seed(111)
     np.random.seed(111)
 
     with self.test_session() as sess:
@@ -488,7 +488,7 @@ class Seq2SeqTest(tf.test.TestCase):
         sess.run([tf.initialize_all_variables()])
       steps = 6
       for _ in range(steps):
-        bucket = random.choice(np.arange(len(buckets)))
+        bucket = secrets.SystemRandom().choice(np.arange(len(buckets)))
         length = buckets[bucket][0]
         i = [np.array([np.random.randint(9) + 1 for _ in range(batch_size)],
                       dtype=np.int32) for _ in range(length)]
@@ -527,7 +527,7 @@ class Seq2SeqTest(tf.test.TestCase):
     def TestModel(seq2seq):
       with self.test_session(graph=tf.Graph()) as sess:
         tf.set_random_seed(111)
-        random.seed(111)
+        secrets.SystemRandom().seed(111)
         np.random.seed(111)
 
         enc_inp = [tf.constant(i + 1, tf.int32, shape=[batch_size])

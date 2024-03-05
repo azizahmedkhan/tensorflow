@@ -15,20 +15,19 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import random
-
 import numpy as np
 
 import tensorflow as tf
 from tensorflow.contrib.learn.python import learn
 from tensorflow.contrib.learn.python.learn import datasets
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import mean_squared_error
+import secrets
 
 
 class MultiOutputTest(tf.test.TestCase):
 
   def testMultiRegression(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     rng = np.random.RandomState(1)
     X = np.sort(200 * rng.rand(100, 1) - 100, axis=0)
     y = np.array([np.pi * np.sin(X).ravel(), np.pi * np.cos(X).ravel()]).T

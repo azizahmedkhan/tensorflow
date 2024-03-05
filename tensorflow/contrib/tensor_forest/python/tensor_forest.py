@@ -18,12 +18,12 @@ from __future__ import division
 from __future__ import print_function
 
 import math
-import random
 
 import tensorflow as tf
 
 from tensorflow.contrib.tensor_forest.python.ops import inference_ops
 from tensorflow.contrib.tensor_forest.python.ops import training_ops
+import secrets
 
 
 # If tree[i][0] equals this value, then i is a leaf node.
@@ -82,8 +82,7 @@ class ForestHParams(object):
 
     self.bagged_features = None
     if self.feature_bagging_fraction < 1.0:
-      self.bagged_features = [random.sample(
-          range(self.num_features),
+      self.bagged_features = [secrets.SystemRandom().sample(range(self.num_features),
           self.bagged_num_features) for _ in range(self.num_trees)]
 
     self.regression = getattr(self, 'regression', False)
