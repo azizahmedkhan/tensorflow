@@ -86,7 +86,7 @@ class RegularizerTest(tf.test.TestCase):
     dummy_regularizer = lambda x: tf.reduce_sum(2 * x)
     array_weights_list = [[1.5], [2, 3, 4.2], [10, 42, 666.6]]
     tensor_weights_list = [tf.constant(x) for x in array_weights_list]
-    expected = sum([2 * x for l in array_weights_list for x in l])
+    expected = sum(2 * x for l in array_weights_list for x in l)
     with self.test_session():
       result = tf.contrib.layers.apply_regularization(dummy_regularizer,
                                                       tensor_weights_list)

@@ -163,8 +163,8 @@ def train():
       # Choose a bucket according to data distribution. We pick a random number
       # in [0, 1] and use the corresponding interval in train_buckets_scale.
       random_number_01 = np.random.random_sample()
-      bucket_id = min([i for i in xrange(len(train_buckets_scale))
-                       if train_buckets_scale[i] > random_number_01])
+      bucket_id = min(i for i in xrange(len(train_buckets_scale))
+                       if train_buckets_scale[i] > random_number_01)
 
       # Get a batch and make a step.
       start_time = time.time()
@@ -227,8 +227,8 @@ def decode():
       # Get token-ids for the input sentence.
       token_ids = data_utils.sentence_to_token_ids(tf.compat.as_bytes(sentence), en_vocab)
       # Which bucket does it belong to?
-      bucket_id = min([b for b in xrange(len(_buckets))
-                       if _buckets[b][0] > len(token_ids)])
+      bucket_id = min(b for b in xrange(len(_buckets))
+                       if _buckets[b][0] > len(token_ids))
       # Get a 1-element batch to feed the sentence to the model.
       encoder_inputs, decoder_inputs, target_weights = model.get_batch(
           {bucket_id: [(token_ids, [])]}, bucket_id)

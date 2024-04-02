@@ -67,10 +67,10 @@ def _as_shape_list(shapes, dtypes, unknown_dim_allowed=False,
     shapes = [shapes]
   shapes = [tensor_shape.as_shape(shape) for shape in shapes]
   if not unknown_dim_allowed:
-    if any([not shape.is_fully_defined() for shape in shapes]):
+    if any(not shape.is_fully_defined() for shape in shapes):
       raise ValueError("All shapes must be fully defined: %s" % shapes)
   if not unknown_rank_allowed:
-    if any([shape.dims is None for shape in shapes]):
+    if any(shape.dims is None for shape in shapes):
       raise ValueError("All shapes must have a defined rank: %s" % shapes)
 
   return shapes
@@ -178,11 +178,11 @@ class QueueBase(object):
       raise TypeError("A list of queues expected")
 
     dtypes = queues[0].dtypes
-    if not all([dtypes == q.dtypes for q in queues[1:]]):
+    if not all(dtypes == q.dtypes for q in queues[1:]):
       raise TypeError("Queues do not have matching component dtypes.")
 
     names = queues[0].names
-    if not all([names == q.names for q in queues[1:]]):
+    if not all(names == q.names for q in queues[1:]):
       raise TypeError("Queues do not have matching component names.")
 
     queue_refs = [x.queue_ref for x in queues]

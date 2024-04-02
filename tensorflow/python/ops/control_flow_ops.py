@@ -124,7 +124,7 @@ def _NextIteration(data, name=None):
 
 
 def _Merge(values, name=None):
-  if all([v.dtype.is_ref_dtype for v in values]):
+  if all(v.dtype.is_ref_dtype for v in values):
     return gen_control_flow_ops._ref_merge(values, name)
   else:
     return gen_control_flow_ops._merge(values, name)
@@ -242,7 +242,7 @@ def merge(inputs, name=None):
   with ops.op_scope(inputs, name, "Merge") as name:
     inputs = [ops.convert_to_tensor_or_indexed_slices(inp)
               for inp in inputs]
-    if all([isinstance(inp, ops.Tensor) for inp in inputs]):
+    if all(isinstance(inp, ops.Tensor) for inp in inputs):
       return _Merge(inputs, name=name)
     else:
       inputs = math_ops._as_indexed_slices_list(inputs)

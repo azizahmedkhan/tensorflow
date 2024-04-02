@@ -451,12 +451,12 @@ class ControlFlowTest(tf.test.TestCase):
       tf.initialize_all_variables().run()
       # Should just be [1, 1], but possibly a sparse representation
       gv, gi = sess.run([grad.values, grad.indices], feed_dict={c: 1})
-      dense_gv = [sum([y for (x, y) in zip(gi, gv) if x == i]) for i in range(2)
+      dense_gv = [sum(y for (x, y) in zip(gi, gv) if x == i) for i in range(2)
                  ]
       self.assertAllEqual(dense_gv, [1.0, 1.0])
       # Should be [0, 2], as the else forwards v1[1] twice
       gv, gi = sess.run([grad.values, grad.indices], feed_dict={c: 3})
-      dense_gv = [sum([y for (x, y) in zip(gi, gv) if x == i]) for i in range(2)
+      dense_gv = [sum(y for (x, y) in zip(gi, gv) if x == i) for i in range(2)
                  ]
       self.assertAllEqual(dense_gv, [0.0, 2.0])
 

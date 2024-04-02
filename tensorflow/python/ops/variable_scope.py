@@ -138,7 +138,7 @@ class _VariableStore(object):
           if value.op.name == name:
             return value
 
-        if all([p < 2 for p in partitions]):
+        if all(p < 2 for p in partitions):
           partition_ix = 0
         else:
           partition_ix = [i for i, p in enumerate(partitions) if p > 1][0]
@@ -273,7 +273,7 @@ class _VariableStore(object):
           "Partitioner returned a partition list that does not match the "
           "Variable's rank: %s vs. %s" % (partitions, shape))
 
-    if any([p < 1 for p in partitions]):
+    if any(p < 1 for p in partitions):
       raise ValueError(
           "Partitioner returned zero partitions for some axes: %s" % partitions)
 
