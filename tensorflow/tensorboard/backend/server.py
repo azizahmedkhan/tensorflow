@@ -17,10 +17,6 @@
 This is its own module so it can be used in both actual code and test code.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import functools
 import os
 import threading

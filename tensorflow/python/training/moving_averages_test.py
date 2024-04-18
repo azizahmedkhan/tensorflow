@@ -14,9 +14,6 @@
 # ==============================================================================
 
 """Functional test for moving_averages.py."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import tensorflow as tf
 from tensorflow.python.ops import state_ops

@@ -14,10 +14,6 @@
 # ==============================================================================
 """A module containing TensorFlow ops whose API may change in the future."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 # TODO(ptucker): Add these to tf.contrib.variables?
 # pylint: disable=wildcard-import
 from tensorflow.contrib.framework.python.ops.arg_scope import *

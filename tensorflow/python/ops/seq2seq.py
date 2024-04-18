@@ -53,10 +53,6 @@ one of them, others should be easy to substitute.
     (see the tutorial above for an explanation of why and how to use it).
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 # We disable pylint because we need python3 compatibility.
 from six.moves import xrange  # pylint: disable=redefined-builtin
 from six.moves import zip     # pylint: disable=redefined-builtin

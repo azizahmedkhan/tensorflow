@@ -15,10 +15,6 @@
 
 """Read a file and return its contents."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import os.path
 
 from tensorflow.python.platform import logging

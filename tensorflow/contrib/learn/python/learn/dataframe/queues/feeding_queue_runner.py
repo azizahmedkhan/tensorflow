@@ -15,10 +15,6 @@
 
 """A `QueueRunner` that takes a feed function as an argument."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.python.framework import errors
 from tensorflow.python.platform import tf_logging as logging
 from tensorflow.python.training import queue_runner as qr

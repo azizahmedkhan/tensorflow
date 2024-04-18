@@ -14,10 +14,6 @@
 # ==============================================================================
 """A module containing TensorFlow ops whose API may change in the future."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.contrib.losses.python.losses.loss_ops import absolute_difference
 from tensorflow.contrib.losses.python.losses.loss_ops import cosine_distance
 from tensorflow.contrib.losses.python.losses.loss_ops import log

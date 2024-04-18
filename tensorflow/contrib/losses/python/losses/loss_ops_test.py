@@ -14,10 +14,6 @@
 # ==============================================================================
 
 """Tests for contrib.losses.python.losses.loss_ops."""
-# pylint: disable=unused-import,g-bad-import-order
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 # pylint: enable=unused-import
 
 import numpy as np

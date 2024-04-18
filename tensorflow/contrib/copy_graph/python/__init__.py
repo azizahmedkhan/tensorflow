@@ -14,7 +14,3 @@
 # ==============================================================================
 """Functions for copying elements from one graph to another.
 """
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function

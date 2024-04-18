@@ -14,10 +14,6 @@
 # ==============================================================================
 """The Uniform distribution class."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.contrib.distributions.python.ops.distribution import ContinuousDistribution  # pylint: disable=line-too-long
 from tensorflow.contrib.framework.python.framework import tensor_util as contrib_tensor_util  # pylint: disable=line-too-long
 from tensorflow.python.framework import ops

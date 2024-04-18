@@ -32,11 +32,6 @@ perform forward computation and gradient calculation in parallel, which
 should lead to increased training speed for the simple model.
 """
 
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import math
 import sys
 import tempfile

@@ -135,12 +135,6 @@ overview of summaries, event files, and visualization in TensorBoard.
 @@write_graph
 
 """
-# pylint: enable=line-too-long
-
-# Optimizers.
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import sys
 

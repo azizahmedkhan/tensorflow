@@ -14,9 +14,6 @@
 # ==============================================================================
 
 """Gradients for operators defined in tensor_array_ops.py."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import tensor_array_ops

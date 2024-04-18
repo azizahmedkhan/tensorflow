@@ -15,10 +15,6 @@
 
 """Ops for building quantized models."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 # pylint: disable=unused-import,wildcard-import,g-bad-import-order
 from tensorflow.contrib.quantization.python import array_ops as quantized_array_ops
 from tensorflow.contrib.quantization.python.math_ops import *

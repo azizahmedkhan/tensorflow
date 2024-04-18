@@ -14,10 +14,6 @@
 # ==============================================================================
 """The Gaussian distribution: conjugate posterior closed form calculations."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.contrib.distributions.python.ops.gaussian import Gaussian  # pylint: disable=line-too-long
 
 from tensorflow.python.ops import math_ops

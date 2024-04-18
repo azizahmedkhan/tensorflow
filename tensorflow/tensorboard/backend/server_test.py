@@ -17,10 +17,6 @@
 These tests start up a full-fledged TensorBoard server.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import base64
 import gzip
 import json

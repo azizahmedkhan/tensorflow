@@ -22,11 +22,6 @@ TensorFlow provides several operators that allows the user to keep tensors
 @@delete_session_tensor
 """
 
-# pylint: disable=g-bad-name
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.python.framework import device as pydev
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

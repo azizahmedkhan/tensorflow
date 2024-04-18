@@ -18,10 +18,6 @@ We import and test the utility functions directly because it's easier than
 starting up a server.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from six.moves import xrange
 
 from tensorflow.python.platform import googletest

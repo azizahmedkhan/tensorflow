@@ -19,10 +19,6 @@ and for handling the API calls to endpoints like /tags that require information
 about loaded events.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import csv
 import gzip
 import imghdr

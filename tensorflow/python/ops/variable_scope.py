@@ -15,10 +15,6 @@
 
 """A class to store named variables and a scope operator to manage sharing."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import collections as collections_lib
 import contextlib
 import traceback

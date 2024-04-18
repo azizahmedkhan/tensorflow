@@ -14,10 +14,6 @@
 # ==============================================================================
 """A module containing TensorFlow ops whose API may change in the future."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 # pylint: disable=unused-import,wildcard-import
 from tensorflow.contrib.quantization.python.array_ops import *
 from tensorflow.contrib.quantization.python.math_ops import *

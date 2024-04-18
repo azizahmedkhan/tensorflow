@@ -50,9 +50,6 @@ This produces a new model file that can be loaded and run by any TensorFlow
 program, for example the label_image sample code.
 
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from datetime import datetime
 import glob

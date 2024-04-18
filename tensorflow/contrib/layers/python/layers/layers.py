@@ -16,10 +16,6 @@
 # pylint: disable=g-short-docstring-punctuation
 """Higher level ops for building layers."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import functools
 
 from tensorflow.contrib.framework.python.ops import add_arg_scope

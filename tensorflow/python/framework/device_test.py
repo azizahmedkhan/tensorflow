@@ -14,9 +14,6 @@
 # ==============================================================================
 
 """Tests for tensorflow.python.framework.device."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from tensorflow.python.framework import device
 from tensorflow.python.framework import test_util

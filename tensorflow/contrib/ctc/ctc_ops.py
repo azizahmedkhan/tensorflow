@@ -16,10 +16,6 @@
 # pylint: disable=unused-import
 """CTC (Connectionist Temporal Classification) Operations."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import sys
 
 from tensorflow.core.framework import types_pb2

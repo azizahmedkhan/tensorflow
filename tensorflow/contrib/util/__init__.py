@@ -25,10 +25,6 @@
 
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 # pylint: disable=unused-import
 from tensorflow.python.framework.tensor_util import constant_value
 from tensorflow.python.framework.tensor_util import make_tensor_proto

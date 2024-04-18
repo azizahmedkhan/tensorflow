@@ -14,9 +14,6 @@
 # ==============================================================================
 
 """Tests for the gradient of `tf.sparse_tensor_dense_matmul()`."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import numpy as np
 import tensorflow as tf

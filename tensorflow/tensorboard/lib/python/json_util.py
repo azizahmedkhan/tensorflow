@@ -23,10 +23,6 @@ JSONEncoder nor passing a function in the |default| keyword argument overrides
 this.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import math
 
 

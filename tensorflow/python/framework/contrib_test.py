@@ -14,10 +14,6 @@
 # ==============================================================================
 """Test that the contrib module shows up properly."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import inspect
 from tensorflow.python.platform import googletest
 

@@ -28,9 +28,6 @@ The key ops used are:
 * GradientDescentOptimizer for optimizing the loss.
 * skipgram custom op that does input processing.
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import os
 import sys

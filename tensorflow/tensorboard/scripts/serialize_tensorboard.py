@@ -21,10 +21,6 @@ This makes it easy to mock out the TensorBoard backend so that the frontend
 may be tested in isolation.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import gzip
 import json
 import os

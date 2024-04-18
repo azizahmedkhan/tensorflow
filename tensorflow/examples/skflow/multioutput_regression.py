@@ -17,9 +17,6 @@ This example uses the same data as one here:
 
 Instead of DecisionTree a 2-layer Deep Neural Network with RELU activations is used.
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import numpy as np
 import matplotlib.pyplot as plt

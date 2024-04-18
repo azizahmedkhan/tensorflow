@@ -52,9 +52,6 @@ To run:
 $ python ptb_word_lm.py --data_path=simple-examples/data/
 
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import time
 

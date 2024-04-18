@@ -13,9 +13,6 @@
 # limitations under the License.
 # ==============================================================================
 """Proximal stochastic dual coordinate ascent optimizer for linear models."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import uuid
 

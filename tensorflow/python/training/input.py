@@ -19,10 +19,6 @@ Please see the [reading data how-to](../../how_tos/reading_data/index.md)
 for context.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import collections
 
 from six.moves import xrange  # pylint: disable=redefined-builtin

@@ -19,9 +19,6 @@ Reference Paper: http://arxiv.org/pdf/1512.03385.pdf
 Note that this is still a work-in-progress. Feel free to submit a PR
 to make this better.
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import os
 from collections import namedtuple

@@ -18,9 +18,6 @@ This script takes a GraphDef representing a network, and produces a DOT file
 that can then be visualized by GraphViz tools like dot and xdot.
 
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import re
 

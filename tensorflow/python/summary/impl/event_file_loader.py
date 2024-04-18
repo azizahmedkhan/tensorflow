@@ -14,9 +14,6 @@
 # ==============================================================================
 
 """Functionality for loading events from a record file."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from tensorflow.core.util import event_pb2
 from tensorflow.python import pywrap_tensorflow

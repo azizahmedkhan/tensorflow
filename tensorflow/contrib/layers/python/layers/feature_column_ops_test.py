@@ -14,10 +14,6 @@
 # ==============================================================================
 """Tests for layers.feature_column_ops."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import tensorflow as tf
 
 from tensorflow.contrib.layers.python.layers import feature_column_ops

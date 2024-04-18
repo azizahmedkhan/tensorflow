@@ -35,9 +35,5 @@ uncompressed_binary = ffmpeg.encode_audio(
 @@encode_audio
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.contrib.ffmpeg.ffmpeg_ops import decode_audio
 from tensorflow.contrib.ffmpeg.ffmpeg_ops import encode_audio

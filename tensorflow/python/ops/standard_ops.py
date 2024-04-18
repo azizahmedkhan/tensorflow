@@ -16,11 +16,6 @@
 # pylint: disable=unused-import
 """Import names of Tensor Flow standard Ops."""
 
-# Imports the following modules so that @RegisterGradient get executed.
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.python.ops import array_grad
 from tensorflow.python.ops import data_flow_grad
 from tensorflow.python.ops import math_grad

@@ -15,10 +15,6 @@
 
 """TensorFlow interface for third-party optimizers."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import gradients

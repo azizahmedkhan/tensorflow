@@ -29,9 +29,6 @@ Forward-backward pass:
 Run on Tesla K40c: 480 +/- 48 ms / batch
 Run on Titan X:    244 +/- 30 ms / batch
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from datetime import datetime
 import math

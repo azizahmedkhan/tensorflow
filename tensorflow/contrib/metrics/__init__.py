@@ -129,9 +129,6 @@ time.
 @@set_union
 
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long,g-importing-member,wildcard-import
 from tensorflow.contrib.metrics.python.metrics import *

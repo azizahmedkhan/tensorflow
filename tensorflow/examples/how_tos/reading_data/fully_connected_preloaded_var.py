@@ -25,9 +25,6 @@ or, if installed via pip:
 cd tensorflow/examples/how_tos/reading_data
 python fully_connected_preloaded_var.py
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import os.path
 import time

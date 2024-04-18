@@ -20,9 +20,6 @@ An extended collection of matrix derivative results for forward and reverse
 mode algorithmic differentiation by Mike Giles:
 http://eprints.maths.ox.ac.uk/1079/1/NA-08-01.pdf
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

@@ -14,9 +14,6 @@
 # ==============================================================================
 
 """Tests for cluster-spec string parser in GRPC TensorFlow server."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import tensorflow as tf
 

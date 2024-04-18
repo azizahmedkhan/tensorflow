@@ -15,9 +15,6 @@
 
 """Variable functions.
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 from tensorflow.contrib.framework.python.ops import add_arg_scope as contrib_add_arg_scope
 from tensorflow.python.framework import device as tf_device
 from tensorflow.python.framework import dtypes

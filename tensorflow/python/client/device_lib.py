@@ -14,10 +14,6 @@
 # ==============================================================================
 """A Python interface for creating TensorFlow servers."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import six  # pylint: disable=unused-import
 
 from tensorflow.core.framework import device_attributes_pb2

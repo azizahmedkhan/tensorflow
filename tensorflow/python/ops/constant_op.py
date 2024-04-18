@@ -98,12 +98,6 @@ print(sess.run(var))
 @@set_random_seed
 """
 
-# Must be separate from array_ops to avoid a cyclic dependency.
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import numpy as np
 
 from tensorflow.core.framework import attr_value_pb2

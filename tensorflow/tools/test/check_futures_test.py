@@ -23,9 +23,6 @@ bugs in Python 3.
 Note: We can't use tf.test in this file because it needs to run in an
 environment that doesn't include license-free gen_blah_ops.py files.
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import fnmatch
 import os

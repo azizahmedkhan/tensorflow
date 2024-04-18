@@ -63,10 +63,6 @@ Typical usage example:
   See feature_column_ops_test for more examples.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import abc
 import collections
 import math

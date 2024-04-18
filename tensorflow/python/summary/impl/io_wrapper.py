@@ -19,9 +19,6 @@ only implements the operations that are necessary for loading event files. The
 functions either dispatch to the gcs library or to gfile, depending on whether
 the path is a GCS 'pseudo-path' (i.e., it satisfies gcs.IsGCSPath) or not.
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import os
 

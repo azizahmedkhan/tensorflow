@@ -14,10 +14,6 @@
 # ==============================================================================
 """Test for version 1 of the zero_out op."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import tensorflow as tf
 from tensorflow.g3doc.how_tos.adding_an_op import cuda_op
 

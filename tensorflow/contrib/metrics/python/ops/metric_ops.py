@@ -18,10 +18,6 @@ Module documentation, including "@@" callouts, should be put in
 third_party/tensorflow/contrib/metrics/__init__.py
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.contrib import framework
 from tensorflow.contrib.metrics.python.ops import set_ops
 from tensorflow.python.framework import dtypes

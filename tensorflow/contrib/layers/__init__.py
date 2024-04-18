@@ -67,10 +67,6 @@ of `summarize_collection` to `VARIABLES`, `WEIGHTS` and `BIASES`, respectively.
 @@summarize_activations
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import sys
 
 # pylint: disable=unused-import,wildcard-import

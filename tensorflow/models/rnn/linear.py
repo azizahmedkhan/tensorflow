@@ -13,8 +13,5 @@
 # limitations under the License.
 # ==============================================================================
 """Import linear python op for backward compatibility."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 raise ImportError("This module is deprecated.  Use tf.contrib.layers.linear.")

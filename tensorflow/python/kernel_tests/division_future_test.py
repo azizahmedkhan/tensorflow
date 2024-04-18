@@ -19,10 +19,6 @@ This file should be exactly the same as division_past_test.py except
 for the __future__ division line.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import numpy as np
 import tensorflow as tf
 

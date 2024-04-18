@@ -55,9 +55,6 @@ differentiation of graphs for comparison against registered analytic gradients.
 @@compute_gradient_error
 
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import googletest

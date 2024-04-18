@@ -14,10 +14,6 @@
 # ==============================================================================
 """The Chi2 distribution class."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.contrib.distributions.python.ops import gamma
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import math_ops

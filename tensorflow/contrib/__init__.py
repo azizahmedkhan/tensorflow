@@ -14,10 +14,6 @@
 # ==============================================================================
 """contrib module containing volatile or experimental code."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 # Add projects here, they will show up under tf.contrib.
 from tensorflow.contrib import ctc
 from tensorflow.contrib import distributions

@@ -26,10 +26,6 @@ first graph inside a scope in the second graph.
 @@get_copied_op
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from copy import deepcopy
 from tensorflow.python.ops.variables import Variable
 from tensorflow.python.client.session import Session

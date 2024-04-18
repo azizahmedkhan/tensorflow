@@ -15,10 +15,6 @@
 
 """Helper functions for enqueuing data from arrays and pandas `DataFrame`s."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import numpy as np
 import tensorflow as tf
 import tensorflow.contrib.learn.python.learn.dataframe.queues.feeding_queue_runner as fqr

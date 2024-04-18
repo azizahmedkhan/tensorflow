@@ -19,10 +19,6 @@ callouts, e.g. "@@my_op" should go in math_ops.  To the user, these are just
 normal math_ops.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import check_ops

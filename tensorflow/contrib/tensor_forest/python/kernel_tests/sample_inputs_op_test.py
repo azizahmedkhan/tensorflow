@@ -13,9 +13,6 @@
 # limitations under the License.
 # ==============================================================================
 """Tests for tf.contrib.tensor_forest.ops.sample_inputs_op."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import tensorflow as tf
 

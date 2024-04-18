@@ -33,11 +33,6 @@ mavg = create_slot(var, var.initialized_value(), "exponential_moving_avg")
 update_mavg = mavg.assign_sub((mavg - var) * (1 - decay))
 ```
 """
-# pylint: disable=g-bad-name
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

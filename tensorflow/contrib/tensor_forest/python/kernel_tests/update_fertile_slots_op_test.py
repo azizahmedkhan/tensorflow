@@ -13,9 +13,6 @@
 # limitations under the License.
 # ==============================================================================
 """Tests for tf.contrib.tensor_forest.ops.allocate_deallocate_op."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import tensorflow  # pylint: disable=unused-import
 
