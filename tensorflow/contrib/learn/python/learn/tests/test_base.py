@@ -62,8 +62,8 @@ class BaseTest(tf.test.TestCase):
         classifier.get_variable_names(),
         ["OptimizeLoss/learning_rate",
          "OptimizeLoss/logistic_regression/bias/Adagrad",
-         "OptimizeLoss/logistic_regression/softmax_classifier/"
-           "softmax_cross_entropy_loss/value/avg",
+         "OptimizeLoss/logistic_regression/softmax_classifier/",
+         "softmax_cross_entropy_loss/value/avg",
          "OptimizeLoss/logistic_regression/weights/Adagrad",
          "global_step",
          "logistic_regression/bias",

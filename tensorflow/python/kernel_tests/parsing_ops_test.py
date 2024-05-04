@@ -656,7 +656,7 @@ class ParseSequenceExampleTest(tf.test.TestCase):
         "sequence_features": {"a": tf.FixedLenSequenceFeature((2,), tf.int64)}
     }, expected_err=(
         tf.OpError,
-        "Feature list: a, Index: 1."
+        "Feature list: a, Index: 1.",
         "  Data types don't match. Expected type: int64"))
 
   def testSequenceExampleListWithWrongDataTypeFails(self):
@@ -673,7 +673,7 @@ class ParseSequenceExampleTest(tf.test.TestCase):
         "sequence_features": {"a": tf.FixedLenSequenceFeature((2,), tf.int64)}
     }, expected_err=(
         tf.OpError,
-        "Feature list: a, Index: 0.  Data types don't match."
+        "Feature list: a, Index: 0.  Data types don't match.",
         " Expected type: int64"))
 
   def testSequenceExampleListWithWrongSparseDataTypeFails(self):
@@ -692,8 +692,8 @@ class ParseSequenceExampleTest(tf.test.TestCase):
         "sequence_features": {"a": tf.FixedLenSequenceFeature((2,), tf.int64)}
     }, expected_err=(
         tf.OpError,
-        "Name: in1, Feature list: a, Index: 2."
-        "  Data types don't match. Expected type: int64"
+        "Name: in1, Feature list: a, Index: 2.",
+        "  Data types don't match. Expected type: int64",
         "  Feature is: float_list"))
 
   def testSequenceExampleListWithWrongShapeFails(self):
@@ -711,8 +711,8 @@ class ParseSequenceExampleTest(tf.test.TestCase):
         "sequence_features": {"a": tf.FixedLenSequenceFeature((2,), tf.int64)}
     }, expected_err=(
         tf.OpError,
-        r"Name: in1, Key: a, Index: 1."
-        r"  Number of int64 values != expected."
+        r"Name: in1, Key: a, Index: 1.",
+        r"  Number of int64 values != expected.",
         r"  values size: 3 but output shape: \[2\]"))
 
   def testSequenceExampleWithMissingFeatureListFails(self):
@@ -726,9 +726,9 @@ class ParseSequenceExampleTest(tf.test.TestCase):
         "sequence_features": {"a": tf.FixedLenSequenceFeature((2,), tf.int64)}
     }, expected_err=(
         tf.OpError,
-        "Name: in1, Feature list 'a' is required but could not be found."
-        "  Did you mean to include it in"
-        " feature_list_dense_missing_assumed_empty or"
+        "Name: in1, Feature list 'a' is required but could not be found.",
+        "  Did you mean to include it in",
+        " feature_list_dense_missing_assumed_empty or",
         " feature_list_dense_defaults?"))
 
 
