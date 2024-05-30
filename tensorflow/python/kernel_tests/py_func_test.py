@@ -23,6 +23,7 @@ import tensorflow as tf
 
 from tensorflow.python.framework import errors
 from tensorflow.python.ops import script_ops
+import math
 
 
 class PyOpTest(tf.test.TestCase):
@@ -66,7 +67,7 @@ class PyOpTest(tf.test.TestCase):
     # returns a python literal.
     with self.test_session():
       def literal(x):
-        return 1.0 if x == 0.0 else 0.0
+        return 1.0 if math.isclose(x, 0.0, rel_tol=1e-09, abs_tol=0.0) else 0.0
       x = tf.constant(0.0, tf.float64)
       y, = tf.py_func(literal, [x], [tf.float64])
       self.assertAllClose(y.eval(), 1.0)

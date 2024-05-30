@@ -25,6 +25,7 @@ from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn
 from tensorflow.python.ops import standard_ops
 from tensorflow.python.platform import tf_logging as logging
+import math
 
 __all__ = ['l1_regularizer', 'l2_regularizer', 'sum_regularizer',
            'apply_regularization']
@@ -55,7 +56,7 @@ def l1_regularizer(scale):
     if scale >= 1.:
       raise ValueError('Setting a scale greater than 1 on a regularizer: %g' %
                        scale)
-    if scale == 0.:
+    if math.isclose(scale, 0., rel_tol=1e-09, abs_tol=0.0):
       logging.info('Scale of 0 disables regularizer.')
       return lambda _, name=None: None
 
@@ -98,7 +99,7 @@ def l2_regularizer(scale):
     if scale >= 1.:
       raise ValueError('Setting a scale greater than 1 on a regularizer: %g.' %
                        scale)
-    if scale == 0.:
+    if math.isclose(scale, 0., rel_tol=1e-09, abs_tol=0.0):
       logging.info('Scale of 0 disables regularizer.')
       return lambda _, name=None: None
 

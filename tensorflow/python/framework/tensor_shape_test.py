@@ -22,6 +22,7 @@ from tensorflow.core.framework import tensor_shape_pb2
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import googletest
+import math
 
 
 class DimensionTest(test_util.TensorFlowTestCase):
@@ -133,18 +134,18 @@ class DimensionTest(test_util.TensorFlowTestCase):
     self.assertIs(None,
                   tensor_shape.Dimension(None) == tensor_shape.Dimension(None))
     self.assertTrue(tensor_shape.Dimension(12) == "12")
-    self.assertTrue(tensor_shape.Dimension(12) == 24.0 / 2)
+    self.assertTrue(math.isclose(tensor_shape.Dimension(12), 24.0 / 2, rel_tol=1e-09, abs_tol=0.0))
 
     # None indicates ambiguous comparison, but comparison vs the wrong type
     # is unambigously False.
     self.assertIsNotNone(tensor_shape.Dimension(12) == "_")
-    self.assertIsNotNone(tensor_shape.Dimension(None) == 12.99)
+    self.assertIsNotNone(math.isclose(tensor_shape.Dimension(None), 12.99, rel_tol=1e-09, abs_tol=0.0))
     self.assertFalse(tensor_shape.Dimension(12) == "_")
-    self.assertFalse(tensor_shape.Dimension(None) == 12.99)
+    self.assertFalse(math.isclose(tensor_shape.Dimension(None), 12.99, rel_tol=1e-09, abs_tol=0.0))
 
     self.assertIs(None, tensor_shape.Dimension(None) == "13")
     self.assertIs(None, tensor_shape.Dimension(None) == None)  # pylint: disable=g-equals-none
-    self.assertFalse(tensor_shape.Dimension(12) == 12.99)
+    self.assertFalse(math.isclose(tensor_shape.Dimension(12), 12.99, rel_tol=1e-09, abs_tol=0.0))
 
   def testInequality(self):
     self.assertTrue(tensor_shape.Dimension(12) != tensor_shape.Dimension(13))
@@ -159,13 +160,13 @@ class DimensionTest(test_util.TensorFlowTestCase):
     # None indicates ambiguous comparison, but comparison vs the wrong type
     # is unambigously False.
     self.assertIsNotNone(tensor_shape.Dimension(12) != "_")
-    self.assertIsNotNone(tensor_shape.Dimension(None) != 12.99)
+    self.assertIsNotNone(not math.isclose(tensor_shape.Dimension(None), 12.99, rel_tol=1e-09, abs_tol=0.0))
     self.assertTrue(tensor_shape.Dimension(12) != "_")
-    self.assertTrue(tensor_shape.Dimension(None) != 12.99)
+    self.assertTrue(not math.isclose(tensor_shape.Dimension(None), 12.99, rel_tol=1e-09, abs_tol=0.0))
 
     self.assertIs(None, tensor_shape.Dimension(None) != "13")
     self.assertIs(None, tensor_shape.Dimension(None) != None)  # pylint: disable=g-equals-none
-    self.assertTrue(tensor_shape.Dimension(12) != 12.99)
+    self.assertTrue(not math.isclose(tensor_shape.Dimension(12), 12.99, rel_tol=1e-09, abs_tol=0.0))
 
   def testRepr(self):
     self.assertEqual(repr(tensor_shape.Dimension(7)), "Dimension(7)")

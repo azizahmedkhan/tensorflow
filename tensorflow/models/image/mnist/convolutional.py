@@ -32,6 +32,7 @@ import numpy
 from six.moves import urllib
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
+import math
 
 SOURCE_URL = 'http://yann.lecun.com/exdb/mnist/'
 WORK_DIRECTORY = 'data'
@@ -308,7 +309,7 @@ def main(argv=None):  # pylint: disable=unused-argument
     print('Test error: %.1f%%' % test_error)
     if FLAGS.self_test:
       print('test_error', test_error)
-      assert test_error == 0.0, 'expected 0.0 test_error, got %.2f' % (
+      assert math.isclose(test_error, 0.0, rel_tol=1e-09, abs_tol=0.0), 'expected 0.0 test_error, got %.2f' % (
           test_error,)
 
 

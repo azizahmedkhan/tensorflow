@@ -175,6 +175,7 @@ from tensorflow.python.ops.gen_image_ops import *
 # pylint: enable=wildcard-import
 
 from tensorflow.python.util.all_util import make_all
+import math
 
 
 
@@ -383,7 +384,7 @@ def central_crop(image, central_fraction):
   _Check3DImage(image, require_static=False)
   if central_fraction <= 0.0 or central_fraction > 1.0:
     raise ValueError('central_fraction must be within (0, 1]')
-  if central_fraction == 1.0:
+  if math.isclose(central_fraction, 1.0, rel_tol=1e-09, abs_tol=0.0):
     return image
 
   img_shape = array_ops.shape(image)
