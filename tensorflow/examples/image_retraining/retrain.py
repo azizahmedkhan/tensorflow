@@ -58,7 +58,6 @@ from datetime import datetime
 import glob
 import hashlib
 import os.path
-import random
 import re
 import sys
 import tarfile
@@ -70,6 +69,7 @@ import tensorflow as tf
 from tensorflow.python.client import graph_util
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.platform import gfile
+import secrets
 
 
 FLAGS = tf.app.flags.FLAGS
@@ -475,9 +475,9 @@ def get_random_cached_bottlenecks(sess, image_lists, how_many, category,
   bottlenecks = []
   ground_truths = []
   for unused_i in range(how_many):
-    label_index = random.randrange(class_count)
+    label_index = secrets.SystemRandom().randrange(class_count)
     label_name = list(image_lists.keys())[label_index]
-    image_index = random.randrange(65536)
+    image_index = secrets.SystemRandom().randrange(65536)
     bottleneck = get_or_create_bottleneck(sess, image_lists, label_name,
                                           image_index, image_dir, category,
                                           bottleneck_dir, jpeg_data_tensor,
@@ -520,9 +520,9 @@ def get_random_distorted_bottlenecks(
   bottlenecks = []
   ground_truths = []
   for unused_i in range(how_many):
-    label_index = random.randrange(class_count)
+    label_index = secrets.SystemRandom().randrange(class_count)
     label_name = list(image_lists.keys())[label_index]
-    image_index = random.randrange(65536)
+    image_index = secrets.SystemRandom().randrange(65536)
     image_path = get_image_path(image_lists, label_name, image_index, image_dir,
                                 category)
     if not gfile.Exists(image_path):

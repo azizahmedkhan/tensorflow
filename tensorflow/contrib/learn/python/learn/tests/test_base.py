@@ -15,8 +15,6 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import random
-
 import numpy as np
 import tensorflow as tf
 
@@ -26,12 +24,13 @@ from tensorflow.contrib.learn.python.learn.estimators import base
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import accuracy_score
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import log_loss
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import mean_squared_error
+import secrets
 
 
 class BaseTest(tf.test.TestCase):
 
   def testOneDim(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     X = np.random.rand(1000)
     y = 2 * X + 3
     regressor = learn.TensorFlowLinearRegressor()
@@ -120,7 +119,7 @@ class BaseTest(tf.test.TestCase):
   def testIris_proba(self):
     # If sklearn available.
     if log_loss:
-      random.seed(42)
+      secrets.SystemRandom().seed(42)
       iris = datasets.load_iris()
       classifier = learn.TensorFlowClassifier(n_classes=3, steps=250)
       classifier.fit(iris.data, iris.target)
@@ -128,7 +127,7 @@ class BaseTest(tf.test.TestCase):
       self.assertLess(score, 0.8, "Failed with score = {0}".format(score))
 
   def testBoston(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     boston = datasets.load_boston()
     regressor = learn.TensorFlowLinearRegressor(batch_size=boston.data.shape[0],
                                                 steps=500,

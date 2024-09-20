@@ -17,18 +17,17 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-import random
-
 from tensorflow.contrib.learn.python import learn
 from tensorflow.contrib.learn.python.learn import datasets
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import accuracy_score
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import train_test_split
+import secrets
 
 
 class CustomOptimizer(tf.test.TestCase):
 
   def testIrisMomentum(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
 
     iris = datasets.load_iris()
     X_train, X_test, y_train, y_test = train_test_split(iris.data,
