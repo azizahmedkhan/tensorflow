@@ -20,12 +20,12 @@ from __future__ import print_function
 
 import json
 import os
-import random
 
 import tensorflow as tf
 
 from tensorflow.core.util import test_log_pb2
 from tensorflow.python.platform import benchmark
+import secrets
 
 
 # Used by SomeRandomBenchmark class below.
@@ -125,7 +125,7 @@ class BenchmarkTest(tf.test.TestCase):
         raise e
 
     prefix = os.path.join(
-        tempdir, "reporting_bench_%016x_" % random.getrandbits(64))
+        tempdir, "reporting_bench_%016x_" % secrets.SystemRandom().getrandbits(64))
     expected_output_file = "%s%s" % (
         prefix, "TestReportingBenchmark.benchmarkReport1")
     expected_output_file_2 = "%s%s" % (
