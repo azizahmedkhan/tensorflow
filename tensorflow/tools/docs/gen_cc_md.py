@@ -244,8 +244,8 @@ class Page(object):
 
   def __init__(self, xml_path, deftype):
     self.type = deftype
-    xml_file = open(xml_path)
-    xml = xml_file.read()
+    with open(xml_path) as xml_file:
+      xml = xml_file.read()
     xml = xml.replace('<computeroutput>', '`').replace('</computeroutput>', '`')
     # TODO(josh11b): Should not use HTML entities inside ```...```.
     soup = BeautifulStoneSoup(
