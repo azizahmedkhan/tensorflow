@@ -15,20 +15,19 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import random
-
 import numpy as np
 import tensorflow as tf
 from tensorflow.contrib.learn.python import learn
 from tensorflow.contrib.learn.python.learn import datasets
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import accuracy_score
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import mean_squared_error
+import secrets
 
 
 class NonLinearTest(tf.test.TestCase):
 
   def testIrisDNN(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     iris = datasets.load_iris()
     classifier = learn.TensorFlowDNNClassifier(hidden_units=[10, 20, 10],
                                                n_classes=3)
@@ -44,7 +43,7 @@ class NonLinearTest(tf.test.TestCase):
     self.assertEqual(len(biases), 4)
 
   def testBostonDNN(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     boston = datasets.load_boston()
     regressor = learn.TensorFlowDNNRegressor(hidden_units=[10, 20, 10],
                                              n_classes=0,
@@ -95,7 +94,7 @@ class NonLinearTest(tf.test.TestCase):
     self.assertLess(score, 0.4, "Failed with score = {0}".format(score))
 
   def testRNN(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     data = np.array(
         list([[2, 1, 2, 2, 3], [2, 2, 3, 4, 5], [3, 3, 1, 2, 1], [2, 4, 5, 4, 1]
              ]),
@@ -145,7 +144,7 @@ class NonLinearTest(tf.test.TestCase):
     predictions = regressor.predict(test_data)
 
   def testBidirectionalRNN(self):
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     data = np.array(
         list([[2, 1, 2, 2, 3], [2, 2, 3, 4, 5], [3, 3, 1, 2, 1], [2, 4, 5, 4, 1]
              ]),

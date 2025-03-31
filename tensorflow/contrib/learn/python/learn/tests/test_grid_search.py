@@ -16,7 +16,7 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-import random
+import secrets
 
 HAS_SKLEARN = os.environ.get('TENSORFLOW_SKLEARN', False)
 if HAS_SKLEARN: 
@@ -36,7 +36,7 @@ class GridSearchTest(tf.test.TestCase):
 
   def testIrisDNN(self):
     if HAS_SKLEARN:
-      random.seed(42)
+      secrets.SystemRandom().seed(42)
       iris = datasets.load_iris()
       classifier = learn.TensorFlowDNNClassifier(hidden_units=[10, 20, 10],
                                                  n_classes=3,

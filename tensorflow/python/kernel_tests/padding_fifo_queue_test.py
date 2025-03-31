@@ -17,13 +17,12 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-
-import random
 import time
 
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
+import secrets
 
 
 class PaddingFIFOQueueTest(tf.test.TestCase):
@@ -629,11 +628,11 @@ class PaddingFIFOQueueTest(tf.test.TestCase):
       elements_enqueued = 0
       while elements_enqueued < 250:
         # With equal probability, run Enqueue or enqueue_many.
-        if random.random() > 0.5:
+        if secrets.SystemRandom().random() > 0.5:
           enqueue_op.run({enqueue_placeholder: elements_enqueued})
           elements_enqueued += 1
         else:
-          count = random.randint(0, min(20, 250 - elements_enqueued))
+          count = secrets.SystemRandom().randint(0, min(20, 250 - elements_enqueued))
           range_to_enqueue = np.arange(elements_enqueued,
                                        elements_enqueued + count,
                                        dtype=np.int32)
@@ -660,11 +659,11 @@ class PaddingFIFOQueueTest(tf.test.TestCase):
       elements_dequeued = 0
       while elements_dequeued < 250:
         # With equal probability, run Dequeue or dequeue_many.
-        if random.random() > 0.5:
+        if secrets.SystemRandom().random() > 0.5:
           self.assertEqual(elements_dequeued, dequeued_t.eval())
           elements_dequeued += 1
         else:
-          count = random.randint(0, min(20, 250 - elements_dequeued))
+          count = secrets.SystemRandom().randint(0, min(20, 250 - elements_dequeued))
           expected_range = np.arange(elements_dequeued,
                                      elements_dequeued + count,
                                      dtype=np.int32)
@@ -706,13 +705,13 @@ class PaddingFIFOQueueTest(tf.test.TestCase):
   def testDequeueManyWithTensorParameter(self):
     with self.test_session():
       # Define a first queue that contains integer counts.
-      dequeue_counts = [random.randint(1, 10) for _ in range(100)]
+      dequeue_counts = [secrets.SystemRandom().randint(1, 10) for _ in range(100)]
       count_q = tf.PaddingFIFOQueue(100, tf.int32, ((),))
       enqueue_counts_op = count_q.enqueue_many((dequeue_counts,))
       total_count = sum(dequeue_counts)
 
       # Define a second queue that contains total_count elements.
-      elems = [random.randint(0, 100) for _ in range(total_count)]
+      elems = [secrets.SystemRandom().randint(0, 100) for _ in range(total_count)]
       q = tf.PaddingFIFOQueue(total_count, tf.int32, ((),))
       enqueue_elems_op = q.enqueue_many((elems,))
 

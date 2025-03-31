@@ -17,12 +17,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import random
-
 import tensorflow as tf
 
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import gfile
+import secrets
 
 _VALID_FILE_PATTERN = "VALID"
 _FILE_NAMES = [b"abc", b"def", b"ghi", b"jkl"]
@@ -39,7 +38,7 @@ class GraphIOTest(tf.test.TestCase):
 
   def setUp(self):
     super(GraphIOTest, self).setUp()
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     self._orig_glob = gfile.Glob
     gfile.Glob = self._mock_glob
 
