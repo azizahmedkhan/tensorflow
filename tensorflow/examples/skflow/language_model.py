@@ -30,9 +30,9 @@ CORPUS_FILENAME = "europarl-v6.fr-en.en"
 MAX_DOC_LENGTH = 10
 
 def training_data(filename):
-    f = open(filename)
-    for line in f:
-        yield line
+    with open(filename) as f:
+        for line in f:
+            yield line
 
 
 def iter_docs(docs):
