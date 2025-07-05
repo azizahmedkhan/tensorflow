@@ -23,12 +23,12 @@ import bisect
 import math
 import os
 import os.path
-import random
 import shutil
 
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
+import secrets
 
 tf.flags.DEFINE_string("target", None, """The directoy where serialized data
 will be written""")
@@ -40,7 +40,7 @@ FLAGS = tf.flags.FLAGS
 
 # Hardcode a start time and reseed so script always generates the same data.
 _start_time = 0
-random.seed(0)
+secrets.SystemRandom().seed(0)
 
 
 def _MakeHistogramBuckets():
@@ -96,7 +96,7 @@ def WriteHistogramSeries(writer, tag, mu_sigma_tuples, n=20):
   step = 0
   wall_time = _start_time
   for [mean, stddev] in mu_sigma_tuples:
-    data = [random.normalvariate(mean, stddev) for _ in xrange(n)]
+    data = [secrets.SystemRandom().normalvariate(mean, stddev) for _ in xrange(n)]
     histo = _MakeHistogram(data)
     summary = tf.Summary(value=[tf.Summary.Value(tag=tag, histo=histo)])
     event = tf.Event(wall_time=wall_time, step=step, summary=summary)

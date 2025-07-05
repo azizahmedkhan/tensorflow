@@ -20,13 +20,13 @@ from __future__ import print_function
 import collections
 import math
 import os
-import random
 import zipfile
 
 import numpy as np
 from six.moves import urllib
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
+import secrets
 
 # Step 1: Download the data.
 url = 'http://mattmahoney.net/dc/'
@@ -104,7 +104,7 @@ def generate_batch(batch_size, num_skips, skip_window):
     targets_to_avoid = [ skip_window ]
     for j in range(num_skips):
       while target in targets_to_avoid:
-        target = random.randint(0, span - 1)
+        target = secrets.SystemRandom().randint(0, span - 1)
       targets_to_avoid.append(target)
       batch[i * num_skips + j] = buffer[skip_window]
       labels[i * num_skips + j, 0] = buffer[target]

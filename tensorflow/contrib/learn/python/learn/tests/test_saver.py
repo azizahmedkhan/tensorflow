@@ -16,19 +16,19 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-import random
 
 import tensorflow as tf
 from tensorflow.contrib.learn.python import learn
 from tensorflow.contrib.learn.python.learn import datasets
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import accuracy_score
+import secrets
 
 
 class SaverTest(tf.test.TestCase):
 
   def testIris(self):
     path = tf.test.get_temp_dir() + '/tmp.saver'
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     iris = datasets.load_iris()
     classifier = learn.TensorFlowLinearClassifier(n_classes=3)
     classifier.fit(iris.data, iris.target)
@@ -40,7 +40,7 @@ class SaverTest(tf.test.TestCase):
 
   def testCustomModel(self):
     path = tf.test.get_temp_dir() + '/tmp.saver2'
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     iris = datasets.load_iris()
 
     def custom_model(X, y):
@@ -56,7 +56,7 @@ class SaverTest(tf.test.TestCase):
 
   def testDNN(self):
     path = tf.test.get_temp_dir() + '/tmp_saver3'
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     iris = datasets.load_iris()
     classifier = learn.TensorFlowDNNClassifier(hidden_units=[10, 20, 10],
                                                n_classes=3)
@@ -73,7 +73,7 @@ class SaverTest(tf.test.TestCase):
 
   def testNoCheckpoints(self):
     path = tf.test.get_temp_dir() + '/tmp/tmp.saver4'
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     iris = datasets.load_iris()
     classifier = learn.TensorFlowDNNClassifier(hidden_units=[10, 20, 10],
                                                n_classes=3)

@@ -15,21 +15,20 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import random
-
 import tensorflow as tf
 
 from tensorflow.contrib.learn.python import learn
 from tensorflow.contrib.learn.python.learn.io import *
 from tensorflow.contrib.learn.python.learn import datasets
 from tensorflow.contrib.learn.python.learn.estimators._sklearn import accuracy_score
+import secrets
 
 
 class IOTest(tf.test.TestCase):
 
   def test_pandas_dataframe(self):
     if HAS_PANDAS:
-      random.seed(42)
+      secrets.SystemRandom().seed(42)
       iris = datasets.load_iris()
       data = pd.DataFrame(iris.data)
       labels = pd.DataFrame(iris.target)
@@ -42,7 +41,7 @@ class IOTest(tf.test.TestCase):
 
   def test_pandas_series(self):
     if HAS_PANDAS:
-      random.seed(42)
+      secrets.SystemRandom().seed(42)
       iris = datasets.load_iris()
       data = pd.DataFrame(iris.data)
       labels = pd.Series(iris.target)
@@ -86,7 +85,7 @@ class IOTest(tf.test.TestCase):
 
   def test_dask_iris_classification(self):
     if HAS_DASK and HAS_PANDAS:
-      random.seed(42)
+      secrets.SystemRandom().seed(42)
       iris = datasets.load_iris()
       data = pd.DataFrame(iris.data)
       data = dd.from_pandas(data, npartitions=2)

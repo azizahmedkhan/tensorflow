@@ -20,12 +20,12 @@ from __future__ import print_function
 import cPickle
 import itertools
 import os
-import random
 
 import numpy as np
 import tensorflow as tf
 
 from tensorflow.contrib import learn
+import secrets
 
 # Get training data
 
@@ -154,7 +154,7 @@ while True:
 
     xpred, ygold = [], []
     for _ in range(10):
-        idx = random.randint(0, len(X_test) - 1)
+        idx = secrets.SystemRandom().randint(0, len(X_test) - 1)
         xpred.append(X_test[idx])
         ygold.append(y_test[idx])
     xpred = np.array(xpred)
