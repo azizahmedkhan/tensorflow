@@ -35,20 +35,20 @@ ENGLISH_CORPUS = "europarl-v6.fr-en.en"
 FRENCH_CORPUS = "europarl-v6.fr-en.fr"
 
 def read_iterator(filename, reporting=True):
-    f = open(filename)
-    line_count = 0
-    for line in f:
-        line_count += 1
-        if reporting and line_count % 100000 == 0:
-            print("%d lines read from %s" % (line_count, filename))
-        yield line.strip()
+    with open(filename) as f:
+        line_count = 0
+        for line in f:
+            line_count += 1
+            if reporting and line_count % 100000 == 0:
+                print("%d lines read from %s" % (line_count, filename))
+            yield line.strip()
 
 
 def repeated_read_iterator(filename):
     while True:
-        f = open(filename)
-        for line in f:
-            yield line.strip()
+        with open(filename) as f:
+            for line in f:
+                yield line.strip()
 
 
 def split_train_test(data, partition=0.2, random_seed=42):
